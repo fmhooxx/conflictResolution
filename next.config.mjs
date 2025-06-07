@@ -12,8 +12,8 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   // GitHub Pages 部署配置
-  basePath: process.env.NODE_ENV === 'production' ? '/conflict-resolution-page' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/conflict-resolution-page/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/conflictResolution' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/conflictResolution/' : '',
 }
 
 export default nextConfig
