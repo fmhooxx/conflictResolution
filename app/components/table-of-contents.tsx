@@ -113,9 +113,9 @@ export function TableOfContents({ isExpanded, onToggle }: TableOfContentsProps) 
     return (
       // Removed sticky, top-24 from nav. Parent aside handles stickiness.
       // Added h-full to fill parent aside.
-      <nav className="p-6 bg-slate-50 rounded-lg border border-slate-200 shadow-sm h-full flex flex-col">
-        <div className="flex justify-between items-center mb-5 flex-shrink-0">
-          <h3 className="text-lg font-semibold text-gray-800">本页导览</h3>
+      <nav className="p-6 bg-slate-50 rounded-lg border border-slate-200 shadow-sm h-full flex flex-col overflow-x-hidden">
+        <div className="flex justify-between items-center mb-5 flex-shrink-0 min-w-0">
+          <h3 className="text-lg font-semibold text-gray-800 truncate">本页导览</h3>
           <button
             onClick={onToggle}
             aria-label="收起目录"
@@ -126,14 +126,14 @@ export function TableOfContents({ isExpanded, onToggle }: TableOfContentsProps) 
           </button>
         </div>
         {/* ul now handles its own scrolling within the nav */}
-        <ul id="toc-list" className="space-y-2.5 overflow-y-auto flex-grow">
+        <ul id="toc-list" className="space-y-2.5 overflow-y-auto overflow-x-hidden flex-grow">
           {sections.map((section) => (
             <li key={section.id}>
               <a
                 href={`#${section.id}`}
                 onClick={(e) => handleLinkClick(e, section.id)}
                 className={cn(
-                  "block py-1.5 px-2.5 text-sm text-gray-600 hover:text-indigo-700 transition-all duration-150 rounded-md",
+                  "block py-1.5 px-2.5 text-sm text-gray-600 hover:text-indigo-700 transition-all duration-150 rounded-md leading-relaxed whitespace-normal break-words",
                   activeSection === section.id
                     ? "font-semibold text-indigo-600 bg-indigo-100 scale-[1.02]"
                     : "hover:bg-slate-200 hover:translate-x-1",
