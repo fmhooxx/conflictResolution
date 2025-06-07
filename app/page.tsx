@@ -6,6 +6,7 @@ import Image from "next/image"
 import { ScrollProgressBar } from "./components/scroll-progress-bar"
 import { TableOfContents } from "./components/table-of-contents"
 import { cn } from "@/lib/utils"
+import { getImagePath } from "@/lib/image-path"
 import {
   AlertTriangle,
   BookOpen,
@@ -324,7 +325,7 @@ export default function ConflictResolutionPage() {
                   </p>
                   <div className="mt-4 p-4 border rounded-lg bg-gray-50">
                     <Image
-                      src="/images/tki-model-chart.png"
+                      src={getImagePath("/images/tki-model-chart.png")}
                       alt="托马斯-基尔曼冲突模型示意图。纵轴为强硬性，横轴为合作性。图中包含五种冲突处理风格：竞争、合作、妥协、回避和迁就。"
                       width={800}
                       height={600}
